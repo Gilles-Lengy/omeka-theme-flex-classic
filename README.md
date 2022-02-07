@@ -1,3 +1,7 @@
+# Flex Classic
+
+Flex stands for flexible. It's based on Foundation Classic. See below.
+
 # Foundation Classic
 
 This is an Omeka Classic theme based on ZURB Foundation Sites. It currently comes with a default stylesheet for prototyping as well as 3 other style options. 
