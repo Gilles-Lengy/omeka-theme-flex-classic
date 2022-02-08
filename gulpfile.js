@@ -7,19 +7,19 @@ var sassPaths = [
   'node_modules/foundation-sites/scss',
   'node_modules/motion-ui/src'
 ];
-
+const sass_gulp = require('gulp-sass')(require('sass'));// Gilles Lengy Quick fix
 function sass() {
   return gulp.src('scss/*.scss')
-    .pipe($.sass({
-      includePaths: sassPaths,
-      outputStyle: 'compressed' // if css compressed **file size**
-    })
-      .on('error', $.sass.logError))
-    .pipe($.postcss([
-      autoprefixer()
-    ]))
-    .pipe(gulp.dest('css'))
-    .pipe(browserSync.stream());
+      .pipe(sass_gulp({// Gilles Lengy Quick fix // npm install sass gulp-sass --save-dev
+        includePaths: sassPaths,
+        outputStyle: 'compressed' // if css compressed **file size**
+      })
+          .on('error', sass_gulp.logError))// Gilles Lengy Quick fix
+      .pipe($.postcss([
+        autoprefixer()
+      ]))
+      .pipe(gulp.dest('css'))
+      .pipe(browserSync.stream());
 };
 
 function serve() {
