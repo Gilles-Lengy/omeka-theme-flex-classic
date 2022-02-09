@@ -100,13 +100,9 @@
         <?php endif; ?>
     </div>
 
-    <?php if (@$bodyid === 'home'): ?>
-        <header id="homepage-top-image" role="banner">
-            <?php
-            echo common('homepage-top-image', array(), 'homepage');
-            ?>
-        </header>
-    <?php endif; ?>
+    <?php if (@$bodyid === 'home'):
+        echo common('homepage-top-image', array(), 'homepage');
+    endif; ?>
 
     <div id="content" role="main">
         <?php echo link_to_home_page(theme_logo(), array('class' => 'site-title print-only', 'title' => "Logo")); ?>
