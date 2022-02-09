@@ -215,4 +215,25 @@ function foundation_theme_banner()
     }
 }
 
+/*
+ FLEX FUNCTIONS
+ *********************************/
+
+/**
+ * Returns the img tag for the top image of the homepage or an empty string
+ *
+ */
+function flex_theme_homepage_top_image()
+{
+    $imageTag = '';
+    $homepage_top_image = get_theme_option('homepage_top_image');
+    $view = get_view();
+    if ($homepage_top_image) {
+        $storage = Zend_Registry::get('storage');
+        $uri = $storage->getUri($storage->getPathByType($homepage_top_image, 'theme_uploads'));
+        $imageTag = '<img src="' . $uri . '" alt="' . html_escape($view->translate('Homepage top image')) . '" />';
+    }
+    return $imageTag;
+}
+
 add_translation_source(dirname(__FILE__) . '/languages');
