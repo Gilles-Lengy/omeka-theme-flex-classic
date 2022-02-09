@@ -101,7 +101,7 @@
     </div>
 
     <?php if (@$bodyid === 'home'): ?>
-        <header id="homepage-banner-menu" role="banner">
+        <header id="homepage-top-image" role="banner">
             <?php
             echo common('homepage-top-image', array(), 'homepage');
             ?>
