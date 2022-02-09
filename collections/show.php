@@ -2,6 +2,7 @@
 $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('item_browse_layout') : 'list';
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
+$truncateDescription = (get_theme_option('truncate_body_property') !== null) ? get_theme_option('truncate_body_property') : 'full';
 $isGrid = (!isset($layout) || strpos($layout, 'grid') !== false) ? true : false;
 queue_js_file('browse');
 
