@@ -11,7 +11,7 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Gilles-Lengy/omeka-theme-flex-classic",
-    "email": "outreach@omeka.org"
+    "email": "hello@gilleslengy.dev"
   },
   "dependencies": {
     "foundation-sites": "^6.6.3",
