@@ -1,3 +1,8 @@
+<?php
+if (flex_is_neatline_time_on_home_page()):
+    queue_timeline_assets();
+endif;
+?>
 <?php echo head(array('bodyid' => 'home')); ?>
 
 <?php $homepage_vimeo_video_id = get_theme_option('homepage_vimeo_video_id'); ?>
@@ -47,6 +52,14 @@
         <?php echo get_theme_option('Homepage Text'); ?>
     </div>
     <hr>
+<?php endif; ?>
+
+<?php if (flex_is_neatline_time_on_home_page()): ?>
+    <div id="homepage-neatline-time-timeline">
+        <?php $neatline_time_timeline = flex_get_one_neatline_time_timeline(get_theme_option('homepage_neatline_time')); ?>
+        <h2><?php echo metadata($neatline_time_timeline, 'title'); ?></h2>
+        <?php echo flex_one_neatline_time_timeline_html($neatline_time_timeline); ?>
+    </div>
 <?php endif; ?>
 
 <?php

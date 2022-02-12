@@ -236,4 +236,43 @@ function flex_theme_homepage_top_image()
     return $imageTag;
 }
 
+/**
+ * Returns a given NeatlineTimeTimeline object or null.
+ *
+ * @param integer The id of the NeatlineTimeTimeline.
+ */
+function flex_get_one_neatline_time_timeline($id)
+{
+    $ret = NULL;
+    if ($id > 0) {
+        $timelineTable = get_db()->getTable('NeatlineTimeTimeline');
+        $select = $timelineTable->getSelect();
+        $select->where("id = $id");
+        $ret = $timelineTable->fetchObject($select);
+    }
+
+    return $ret;
+}
+
+function flex_one_neatline_time_timeline_html($neatline_time_timeline)
+{
+    $view = get_view();
+    $view->setCurrentRecord('NeatlineTimeTimeline', $neatline_time_timeline);
+    $html = $view->partial('timelines/_timeline.php', array('center_date' => metadata($neatline_time_timeline, 'center_date')));
+
+    return $html;
+}
+
+function flex_is_neatline_time_on_home_page(): bool
+{
+    $is_neatline_time_on_home_page = false;
+
+    $neatline_time_timeline = flex_get_one_neatline_time_timeline(get_theme_option('homepage_neatline_time'));
+
+    if (plugin_is_active('NeatlineTime') && $neatline_time_timeline != null): $is_neatline_time_on_home_page = true;
+    endif;
+
+    return $is_neatline_time_on_home_page;
+}
+
 add_translation_source(dirname(__FILE__) . '/languages');
