@@ -5,7 +5,10 @@
     <?php echo common('homepage-vimeo', array(), 'homepage'); ?>
 <?php endif; ?>
 
-<?php echo common('homepage-youtube', array(), 'homepage'); ?>
+<?php $homepage_youtube_video_id = get_theme_option('homepage_youtube_video_id'); ?>
+<?php if ($homepage_youtube_video_id): ?>
+    <?php echo common('homepage-youtube', array(), 'homepage'); ?>
+<?php endif; ?>
 
 <div class="featured-records">
     <?php $mainFeaturedRecordType = (get_theme_option('home_main_featured') !== null) ? get_theme_option('home_main_featured') : 'item'; ?>
