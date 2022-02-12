@@ -10,7 +10,8 @@
   margin-bottom: $global-margin;
 }
 
-#home #homepage-vimeo .responsive-embed.widescreen iframe {
+#home #homepage-vimeo .responsive-embed.widescreen iframe,
+#home #homepage-youtube .responsive-embed.widescreen iframe {
   border-top-width: 0;
   border-right-width: 0;
   border-bottom-width: 0;
