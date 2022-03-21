@@ -6,10 +6,7 @@ endif;
 
 <?php echo head(array('bodyid' => 'home')); ?>
 
-<?php $homepage_vimeo_video_id = get_theme_option('homepage_vimeo_video_id'); ?>
-<?php if ($homepage_vimeo_video_id): ?>
-    <?php echo common('homepage-vimeo', array(), 'homepage'); ?>
-<?php endif; ?>
+<?php echo common('homepage-vimeo', array(), 'homepage'); ?>
 
 <?php $homepage_youtube_video_id = get_theme_option('homepage_youtube_video_id'); ?>
 <?php if ($homepage_youtube_video_id): ?>

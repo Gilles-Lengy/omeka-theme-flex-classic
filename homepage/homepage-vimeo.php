@@ -1,3 +1,6 @@
+<?php $homepage_vimeo_video_id = get_theme_option('homepage_vimeo_video_id'); ?>
+<?php if ($homepage_vimeo_video_id): ?>
+
 <?php
 $homepage_vimeo_video_id = get_theme_option('homepage_vimeo_video_id');
 $homepage_vimeo_video_color = get_theme_option('homepage_vimeo_video_color');
@@ -14,3 +17,5 @@ $homepage_vimeo_video_byline = get_theme_option('homepage_vimeo_video_byline');
         </iframe>
     </div>
 </div><!-- end homepage-vimeo -->
+
+<?php endif; ?>
