@@ -12,17 +12,9 @@ endif;
 
 <?php echo common('homepage-neatline-time-timeline', array(), 'homepage'); ?>
 
+<?php echo common('homepage-text', array(), 'homepage'); ?>
+
 <?php echo common('featured-records'); ?>
-
-
-
-<?php if (get_theme_option('Homepage Text')): ?>
-    <?php $introBg = (get_theme_option('Homepage Intro Background') ? 'style="background-image:url(' . foundation_homepage_intro_background() . ')"' : ''); ?>
-    <div id="intro" class="text-center" <?php echo $introBg; ?>>
-        <?php echo get_theme_option('Homepage Text'); ?>
-    </div>
-    <hr>
-<?php endif; ?>
 
 <?php
 $recentItems = get_theme_option('Homepage Recent Items');
