@@ -1,6 +1,6 @@
-<?php
-$homepage_youtube_video_id = get_theme_option('homepage_youtube_video_id');
-?>
+<?php $homepage_youtube_video_id = get_theme_option('homepage_youtube_video_id'); ?>
+<?php if ($homepage_youtube_video_id): ?>
+
 <div id="homepage-youtube">
     <div class="responsive-embed widescreen">
         <iframe
@@ -13,3 +13,5 @@ $homepage_youtube_video_id = get_theme_option('homepage_youtube_video_id');
         </iframe>
     </div>
 </div><!-- end homepage-youtube -->
+
+<?php endif; ?>
