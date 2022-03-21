@@ -3,6 +3,7 @@ if (flex_is_neatline_time_on_home_page()):
     queue_timeline_assets();
 endif;
 ?>
+
 <?php echo head(array('bodyid' => 'home')); ?>
 
 <?php $homepage_vimeo_video_id = get_theme_option('homepage_vimeo_video_id'); ?>
